@@ -28,7 +28,7 @@ def deleteMails():
 
     mail.select("MilleSMS")
 
-    status, messages = mail.search(None, 'FROM "chester12123@gmail.com"')
+    status, messages = mail.search(None, 'FROM ""')
 
     messages = messages[0].split(b' ')
     
@@ -51,7 +51,7 @@ def readMails():
 
     mail.select("MilleSMS")
 
-    _, selected_mails = mail.search(None, '(FROM "chester12123@gmail.com")')
+    _, selected_mails = mail.search(None, '(FROM "")')
 
     for num in selected_mails[0].split():
         _, data = mail.fetch(num , '(RFC822)')
@@ -91,8 +91,8 @@ def SendSMS():
         message = client.messages \
           .create(
               body="Wydane: " + str(current_counter) + " PLN",
-              from_ = +19898001204,
-              to = +48515941721
+              from_ = ,
+              to = +48
             )
     #print(counter)
     #print(current_counter)
